@@ -1,2 +1,4 @@
 .idea/
 run_*/
+*.pyc
+__pycache__/
