@@ -21,8 +21,8 @@ class Blob:
         :param y: The y of the pixel
         """
 
-        self.avg_x = ((self.avg_x * self.mass()) + x) / (self.mass()+1)
-        self.avg_y = ((self.avg_y * self.mass()) + y) / (self.mass()+1)
+        self.avg_x = ((self.avg_x * self.mass()) + x) / (self.mass() + 1)
+        self.avg_y = ((self.avg_y * self.mass()) + y) / (self.mass() + 1)
         self.mass_val += 1
         self.pix_list += [[x, y]]
 
@@ -46,3 +46,26 @@ class Blob:
 
     def __str__(self):
         return self.str()
+
+
+def main():
+    b1 = Blob()
+    b1.add(20, 20)
+    b1.add(20, 21)
+    b1.add(20, 22)
+    b1.add(21, 20)
+    b1.add(21, 21)
+    b2 = Blob()
+    b2.add(40, 40)
+    b2.add(20, 41)
+    b2.add(40, 42)
+    b2.add(41, 40)
+    b2.add(41, 41)
+
+    print('blob 1: ' + b1)
+    print('blob 2: ' + b2)
+    print('Distance form b1 to b2 : ' + b1.distanceTo(b2))
+
+
+if __name__ == '__main__':
+    main()
