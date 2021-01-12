@@ -26,3 +26,6 @@ class Blob:
     def distanceTo(self, c):
         return math.sqrt((self.avg_x - c.avg_x) ** 2 + (self.avg_y - c.avg_y) ** 2)
 
+    def __str__(self):
+        return self.str()
+
