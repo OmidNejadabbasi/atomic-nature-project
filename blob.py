@@ -20,11 +20,11 @@ class Blob:
         :param x: The x of the pixel
         :param y: The y of the pixel
         """
-        if not [x, y] in self.pix_list :
-            self.avg_x = ((self.avg_x * self.mass()) + x) / (self.mass() + 1)
-            self.avg_y = ((self.avg_y * self.mass()) + y) / (self.mass() + 1)
-            self.mass_val += 1
-            self.pix_list += [[x, y]]
+
+        self.avg_x = ((self.avg_x * self.mass()) + x) / (self.mass() + 1)
+        self.avg_y = ((self.avg_y * self.mass()) + y) / (self.mass() + 1)
+        self.mass_val += 1
+        self.pix_list += [[x, y]]
 
     def mass(self):
         """
