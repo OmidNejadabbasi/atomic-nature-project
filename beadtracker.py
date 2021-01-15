@@ -5,15 +5,16 @@ import picture
 
 
 def least_distance(b, blobs, delta):
-    least_dist = delta+1
+    least_dist = delta + 1
     for bl in blobs:
         if b.distanceTo(bl) < least_dist:
             least_dist = b.distanceTo(bl)
 
-    if least_dist == delta+1:
+    if least_dist == delta + 1:
         return None
     else:
         return least_dist
+
 
 def main():
     # getting inputs
@@ -35,7 +36,6 @@ def main():
                 print('{:.4f}'.format(distance))
 
         beadFinder1 = bf
-
 
 
 if __name__ == '__main__':

@@ -6,8 +6,8 @@ from math import pi
 def variance_f(array):
     total = 0
     pixel_to_meter_const = 0.175e-6
-    for i in array:
-        total += (i * pixel_to_meter_const) ** 2
+    for r in range(len(array)):
+        total += (array[r] * pixel_to_meter_const) ** 2
 
     return total / (2 * len(array))
 
@@ -21,7 +21,7 @@ def main():
     """
     data_arr = []
     while not stdio.isEmpty():
-        data_arr += [stdio.readFloat()]
+        data_arr .append(stdio.readFloat())
     variance = variance_f(data_arr)
 
     T = 297  # water temperature
