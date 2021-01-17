@@ -6,7 +6,7 @@ import picture
 class BeadFinder:
     def __init__(self, pic: picture.Picture, tau):
         """
-        Initializing a BeadFinder objec.
+        Initializing a BeadFinder object.
         We find all the blobs here.
         """
         self.pic = pic
@@ -63,6 +63,7 @@ def _find_blobs(bead_finder: BeadFinder, blob, i, j):
         blob.add(j, i)
         bead_finder.found[i][j] = True
 
+    # checking all adjacent cells
     _find_blobs(bead_finder, blob, i, j + 1)
     _find_blobs(bead_finder, blob, i, j - 1)
     _find_blobs(bead_finder, blob, i + 1, j)
@@ -70,6 +71,7 @@ def _find_blobs(bead_finder: BeadFinder, blob, i, j):
 
 
 def main():
+
     min_pixels = int(sys.argv[1])
     tau = float(sys.argv[2])
     file_name = sys.argv[3]

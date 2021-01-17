@@ -4,6 +4,9 @@ from math import pi
 
 
 def variance_f(array):
+    """
+    This function returns the variance of numbers in array assuming their average is 0.
+    """
     total = 0
     pixel_to_meter_const = 0.175e-6
     for r in range(len(array)):
@@ -17,8 +20,9 @@ def main():
     In the main method we receive the data of beadtracker.py program and calculate the Boltzmann constant
     and the Avogadro number.
     The formula we will use is:
-
+    D = kT / 6Ƞπρ
     """
+    # We get the inputs from standard input and store them in data_arr
     data_arr = []
     while not stdio.isEmpty():
         data_arr .append(stdio.readFloat())

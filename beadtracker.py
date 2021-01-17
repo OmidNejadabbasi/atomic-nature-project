@@ -5,6 +5,10 @@ import picture
 
 
 def least_distance(b, blobs, delta):
+    """
+    Finding the closest blob in blobs list to the Blob b. If no blob is in blobs list that has a distance less
+    than delta with b, we return None
+    """
     least_dist = delta + 1
     for bl in blobs:
         if b.distanceTo(bl) < least_dist:

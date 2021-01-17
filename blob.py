@@ -1,6 +1,8 @@
 import math
 
 
+# run_1\*.*
+
 class Blob:
     """
     A class representing a group of pixels connected together.
@@ -8,6 +10,9 @@ class Blob:
     """
 
     def __init__(self):
+        """
+        Initializing Blob object.
+        """
         self.pix_list = []
         self.avg_x = 0
         self.avg_y = 0
