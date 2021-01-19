@@ -22,7 +22,7 @@ class BeadFinder:
         for i in range(self.height):
             for j in range(self.width):
                 pixel = pic.get(j, i)
-                if (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3 > tau:
+                if self.is_white(pixel, tau):
                     self.bmp_table[i][j] = True
 
         # start to find blobs with recursion
@@ -32,6 +32,9 @@ class BeadFinder:
                     blob1 = blob.Blob()
                     _find_blobs(self, blob1, i, j)
                     self.blobs.append(blob1)
+
+    def is_white(self, pixel, tau):
+        return (pixel.getRed()+pixel.getBlue()+pixel.getGreen())/3 > tau
 
     def getBeads(self, min_pixels):
         """
